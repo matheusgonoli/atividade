@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numero_01 = parseFloat(prompt("Digite um número: "));
+        console.log(numero_01);
+
+        let numero_02 = parseFloat(prompt("Digite mais um número: "));
+        console.log(numero_02);
+
+        let operacao = prompt("Digite uma operação (+,-,*,/): ");
+        console.log(operacao);
+
+        let resultado;
+
+        switch (operacao) {
+            case "+":
+                resultado = (numero_01 + numero_02);
+                break;
+
+            case "-":
+                resultado = numero_01 - numero_02;
+                break;
+
+            case '*':
+                resultado = numero_01 * numero_02;
+                break;
+
+            case '/':
+                resultado = numero_01 / numero_02;
+                break;
+
+            default:
+                resultado = "Operação inválida.";
+                break;
+        }
+
+        alert("Resultado: " + resultado);
+        console.log(resultado);
+
+    </script>
+</body>
+
+</html>
