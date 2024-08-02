@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senac</title>
+</head>
+<body>
+
+<table>
+    <tr>
+
+    </tr>
+</table>
+    <script>
+        let numero = parseFloat(prompt('Digite um numero de: '));
+        console.log(numero);
+
+        if ( numero % 2 === 0) {
+            alert ("O número é" + numero + " par!");
+            document.write('<table border="2"><tr bgcolor="DodgerBlue"><td align="center">Par ou Ímpar</td></tr>');
+            document.write('<tr><td bgcolor="LightSkyBlue">Número digitado:</td><td> '+ numero +' </td></tr>');
+            document.write('<tr><td bgcolor="LightSkyBlue">Definição: </td><td> Par </td></tr></table>');
+        } else {
+            alert ("O número é " + numero + " impar");
+            document.write('<table border="2"><tr bgcolor="DodgerBlue"><td align="center">Par ou Ímpar</td></tr>');
+            document.write('<tr><td bgcolor="LightSkyBlue">Número digitado:</td><td> '+ numero +' </td></tr>');
+            document.write('<tr><td bgcolor="LightSkyBlue">Definição: </td><td> Ímpar </td></tr></table>');
+        }
+
+    </script>
+</body>
+</html>
