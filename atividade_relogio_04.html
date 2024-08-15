@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <style>
+        body{
+            background-color: rgba(210, 210, 210, 0.431);
+            display: flex;
+        }
+       
+        .relogio{
+            display: flex;
+            background-color: rgba(255, 255, 255, 0);
+            width: 250px;
+            height: 100px;
+            font-size: 70px;
+            position: absolute;
+            font-style: initial;
+        }
+ 
+        #box{
+            background-color: aquamarine;
+            border-radius: 9px;
+        }
+
+        .caixa_do_relogio{
+            position: relative;
+            width: 500px;
+            height: 250px;
+            background-color: rgba(174, 174, 174, 0.767);
+            left: 28%;
+            z-index: -1;
+            }
+
+    </style>
+   
+    <div class="caixa_do_relogio">
+
+        <div id="dataCompleta" class="dC"></div>
+
+    </div>
+
+    <div class="relogio">
+       
+        <div id="box">
+        <div id="horas"></div>
+        </div>
+
+        <span id="separador1">:</span>
+ 
+        <div id="box">
+        <div id="minutos"></div>
+        </div>
+
+        <span id="separador2">:</span>
+        
+        <div id="box">
+        <div id="segundos"></div>
+        </div>
+ 
+    </div>
+ 
+    <script>
+ 
+        const horas = document.getElementById("horas");
+        const minutos = document.getElementById("minutos");
+        const segundos = document.getElementById("segundos");
+ 
+        // Aplicando o intervalo para o relogio funcionar
+        const relegio = setInterval(function time(){
+ 
+            let tempo = new Date();
+            let h = tempo.getHours();
+            let m = tempo.getMinutes();
+            let s = tempo.getSeconds();
+ 
+            if ( h < 10 ) h = "0" + h;
+            if ( m < 10 ) h = "0" + m;
+            if ( s < 10 ) s= "0" + s;
+ 
+            horas.textContent = h;
+            minutos.textContent = m;
+            segundos.textContent = s;
+        })
+
+    </script>
+    
+    <script>
+        let data = new Date();
+        let dia = data.getDate();
+        let diaSemana = data.getDay();
+        let mes = data.getMonth() +1;
+        let ano = data.getFullYear();
+        
+        let ds;
+        if(diaSemana === 0){ds = 'Domingo'}
+        else if(diaSemana === 1){ds = 'Segunda-feira'}
+        else if(diaSemana === 2){ds = 'Terça-feira'}
+        else if(diaSemana === 3){ds = 'Quarta-feira'}
+        else if(diaSemana === 4){ds = 'Quinta-feira'}
+        else if(diaSemana === 5){ds = 'Sexta-feira'}
+        else if(diaSemana === 6){ds = 'Sabado-feira'}
+        
+        let dataCompleta = ds + ' ' +  dia + ' de ' + mes + ' de ' + ano;
+        document.getElementById (dataCompleta);
+       
+    </script>
+
+</body>
+</html>
